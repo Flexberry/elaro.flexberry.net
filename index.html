@@ -34,14 +34,13 @@
       content: '';
       position: absolute;
       top: 0;
-      right: -200px;
-      width: 800px;
+      right: 0;
+      width: 31vw;
       height: 100%;
       background: var(--accent-green);
-      border-radius: 0 0 50% 50%;
-      transform: rotate(30deg);
+      border-bottom-left-radius: 1000% 1000%;
       z-index: 0;
-    }
+}
     header .container {
       position: relative;
       z-index: 1;
@@ -98,7 +97,7 @@
       padding: 60px 20px;
     }
     section h2 {
-      color: var(--primary-purple);
+      color: #ffffff;
       font-size: 2em;
       margin-bottom: 20px;
       text-align: center;
@@ -116,6 +115,29 @@
       text-align: center;
       font-weight: 500;
     }
+    .steps {
+  counter-reset: step;
+}
+.step {
+  position: relative;
+  padding-left: 40px;
+  margin-bottom: 30px;
+}
+.step::before {
+  counter-increment: step;
+  content: counter(step);
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 30px;
+  height: 30px;
+  background: var(--accent-green);
+  color: #000;
+  border-radius: 50%;
+  text-align: center;
+  line-height: 30px;
+  font-weight: bold;
+}
 
     /* CTA final */
     .cta-final {
@@ -123,7 +145,10 @@
       color: var(--white);
       text-align: center;
       padding: 80px 20px;
-    }
+      width: 100%;
+      max-width: 100%;
+      margin: 0;
+}
     .cta-final h2 { font-size: 2.2em; margin-bottom: 10px; }
     .cta-final p { font-size: 1.1em; margin-bottom: 20px; }
     .cta-final button {
@@ -177,9 +202,17 @@
         <div class="card">👩‍🏫 Преподаватели и репетиторы</div>
         <div class="card">🧘‍♂️ Наставники и коучи</div>
         <div class="card">⚖️ Юристы и консультанты</div>
-        <div class="card">📲 Специалисты через Telegram</div>
       </div>
     </section>
+
+    <section id="how">
+      <h2>Как работает Flexberry Elaro</h2>
+      <div class="steps">
+        <div class="step">Пишет ученик. ИИ-ассистент читает сообщение, классифицирует его и формирует черновик ответа.</div>
+        <div class="step">Черновик приходит в личный чат-бот: вы видите отправителя, контекст, черновик и кнопки — «Отправить» или «Отредактировать».</div>
+        <div class="step">После подтверждения ассистент сам отправляет сообщение от вашего имени адресату.</div>
+      </div>
+    </section>    
 
     <section id="features">
       <h2>Что умеет Elaro</h2>
