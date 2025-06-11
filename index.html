@@ -29,7 +29,7 @@
       background: var(--primary-purple);
       color: var(--white);
       padding: 80px 20px;
-      overflow: hidden;
+      overflow: visible;
       text-align: center;
     }
     header::after {
@@ -63,6 +63,12 @@
       transition: opacity 0.2s;
     }
     nav a:hover { opacity: 0.8; }
+    nav {
+  position: sticky;
+  top: 0;
+  background: var(--primary-purple);
+  z-index: 1000;
+}
     header h1 {
       font-size: 3em;
       margin: 0.2em 0;
@@ -110,10 +116,10 @@
       gap: 20px;
     }
     .card {
-      background: #f9f9fb;
+      background: #f3f0ff;
       padding: 20px;
       border-radius: 12px;
-      box-shadow: 0 4px 6px rgba(0,0,0,0.05);
+      box-shadow: 6px -8px 0px 3px #8017ce;
       text-align: center;
       font-weight: 500;
     }
@@ -124,12 +130,12 @@
   margin-top: 30px;
 }
 .benefit {
-  background: #ece8fc;
+  background: #f3f0ff;
   border: 2px solid #333;
   border-radius: 16px;
   padding: 20px 24px;
   text-align: left;
-  box-shadow: 0 4px 6px rgba(0,0,0,0.05);
+  box-shadow: 18px -20px 0px 0px rgb(128 23 206);
 }
 .benefit-title {
   font-weight: bold;
@@ -243,8 +249,8 @@
   font-size: 2em;
 }
 .faq-item {
-  border-bottom: 1px solid #eee;
-  padding: 15px 0;
+  border-bottom: 2px solid #8017ce;
+  padding: 18px 0;
 }
 .faq-question {
   font-weight: 500;
@@ -263,7 +269,7 @@
 .faq-answer {
   display: none;
   padding: 10px 0 0;
-  color: var(--text-dark);
+  color: #8017ce;
   line-height: 1.5;
 }
   </style>
@@ -280,7 +286,6 @@
         <a href="#future">Скоро</a>
         <a href="#faq">FAQ</a>
       </nav>
-      <img src="https://ai.flexberry.ru/img/logo-light.svg" alt="Flexberry AI Assistant" style="height: 48px; margin-bottom: 20px;">
       <h1>Flexberry Elaro</h1>
       <p>
         Ваш AI-ассистент в Telegram, который экономит часы на переписке и помогает сосредоточиться на важном<br>
@@ -512,7 +517,11 @@
   <section class="cta-final">
     <h2>Готовы делегировать рутину?</h2>
     <p>Попробуйте Flexberry Elaro — 7 дней бесплатно</p>
-    <button>🚀 Получить доступ в Telegram</button>
+    <button
+     class="btn"
+     data-toggle="modal"
+     data-target="#send-modal1"
+   >🚀 Получить доступ в Telegram</button>
   </section>
 
   <footer>
