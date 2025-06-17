@@ -1,546 +1,197 @@
 <!DOCTYPE html>
-<html lang="ру">
-<head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Flexberry Elaro — AI-ассистент в Telegram</title>
-  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
-  <link rel="stylesheet"
-  href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css"/>
-  <style>
-    :root {
-      --primary-purple: #8017CE;
-      --accent-green: #00DB43;
-      --white: #ffffff;
-      --text-dark: #333333;
-    }
-    * { box-sizing: border-box; }
-    body {
-      margin: 0;
-      font-family: 'Roboto', sans-serif;
-      color: var(--text-dark);
-      line-height: 1.6;
-    }
-    a { text-decoration: none; color: inherit; }
-
-    /* Header */
-    header {
-      position: relative;
-      background: var(--primary-purple);
-      color: var(--white);
-      padding: 80px 20px;
-      overflow: visible;
-      text-align: center;
-    }
-    header::after {
-      content: '';
-      position: absolute;
-      top: 0;
-      right: 0;
-      width: 31vw;
-      height: 100%;
-      background: var(--accent-green);
-      border-bottom-left-radius: 1000% 1000%;
-      z-index: 0;
-    }
-    header .container {
-      position: relative;
-      z-index: 1;
-      max-width: 1000px;
-      margin: 0 auto;
-    }
-    nav {
-      display: flex;
-      justify-content: center;
-      gap: 30px;
-      margin-bottom: 40px;
-    }
-    nav a {
-      color: var(--white);
-      font-weight: 500;
-      text-transform: uppercase;
-      font-size: 0.9em;
-      transition: opacity 0.2s;
-    }
-    nav a:hover { opacity: 0.8; }
-    nav {
-  position: sticky;
-  top: 0;
-  background: var(--primary-purple);
-  z-index: 1000;
-}
-    header h1 {
-      font-size: 3em;
-      margin: 0.2em 0;
-    }
-    header p {
-      font-size: 1.2em;
-      max-width: 600px;
-      margin: 0 auto;
-    }
-    .cta-buttons {
-      margin-top: 30px;
-      display: inline-flex;
-      overflow: hidden;
-      border-radius: 30px;
-    }
-    .cta-buttons button {
-      background: var(--accent-green);
-      color: #000;
-      padding: 15px 30px;
-      font-size: 1em;
-      border: none;
-      cursor: pointer;
-      font-weight: bold;
-      flex: 1;
-      transition: opacity 0.2s;
-    }
-    .cta-buttons button:hover { opacity: 0.9; }
-
-    /* Main sections */
-    main { background: var(--white); }
-    section {
-      max-width: 1000px;
-      margin: 0 auto;
-      padding: 60px 20px;
-    }
-    section h2 {
-      color: var(--primary-purple);
-      font-size: 2em;
-      margin-bottom: 20px;
-      text-align: center;
-    }
-    .grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
-      gap: 20px;
-    }
-    .card {
-      background: #f3f0ff;
-      padding: 20px;
-      border-radius: 12px;
-      box-shadow: 6px -8px 0px 3px #8017ce;
-      text-align: center;
-      font-weight: 500;
-    }
-.benefits {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
-  gap: 30px;
-  margin-top: 30px;
-}
-.benefit {
-  background: #f3f0ff;
-  border: 2px solid #333;
-  border-radius: 16px;
-  padding: 20px 24px;
-  text-align: left;
-  box-shadow: 18px -20px 0px 0px rgb(128 23 206);
-}
-.benefit-title {
-  font-weight: bold;
-  font-size: 1.1em;
-  margin-bottom: 10px;
-}
-.benefit p {
-  margin: 0;
-  line-height: 1.5;
-}
-    .target-list {
-  list-style: none;
-  padding: 0;
-  max-width: 800px;
-  margin: 0 auto;
-}
-.target-list li {
-  display: flex;
-  align-items: flex-start;
-  margin-bottom: 20px;
-}
-.target-list .icon {
-  font-size: 1.5em;
-  margin-right: 12px;
-  line-height: 1;
-}
-.target-list p {
-  margin: 0;
-  line-height: 1.4;
-}
-    .steps {
-      counter-reset: step;
-    }
-    .step {
-      position: relative;
-      padding-left: 40px;
-      margin-bottom: 30px;
-    }
-    .step::before {
-      counter-increment: step;
-      content: counter(step);
-      position: absolute;
-      left: 0;
-      top: 0;
-      width: 30px;
-      height: 30px;
-      background: var(--accent-green);
-      color: #000;
-      border-radius: 50%;
-      text-align: center;
-      line-height: 30px;
-      font-weight: bold;
-    }
-
-    /* CTA final */
-    .cta-final {
-  background: var(--primary-purple);
-  color: var(--white);       
-  text-align: center;
-  padding: 80px 20px;
-  width: 100%;
-  max-width: 100%;
-  margin: 0;
-}
-.cta-final h2 {
-  font-size: 2.2em;
-  margin-bottom: 10px;
-  color: var(--white);       
-}
-.cta-final p {
-  font-size: 1.1em;
-  margin-bottom: 20px;
-  color: var(--white);       
-}
-.cta-final button {
-  background: var(--accent-green);
-  color: #000;
-  padding: 15px 40px;
-  font-size: 1em;
-  border: none;
-  border-radius: 30px;
-  cursor: pointer;
-  font-weight: bold;
-  transition: opacity 0.2s;
-}
-.cta-final button:hover {
-  opacity: 0.9;
-}
-
-    /* Footer */
-    footer {
-      background: var(--white);
-      color: var(--text-dark);
-      text-align: center;
-      padding: 20px;
-      font-size: 0.9em;
-      border-top: 1px solid #eee;
-    }
-    footer a { color: var(--primary-purple); }
-   
-    /* FAQ section */
-#faq {
-  max-width: 1000px;
-  margin: 0 auto;
-  padding: 60px 20px;
-}
-#faq h2 {
-  color: var(--primary-purple);
-  text-align: center;
-  margin-bottom: 30px;
-  font-size: 2em;
-}
-.faq-item {
-  border-bottom: 2px solid #8017ce;
-  padding: 18px 0;
-}
-.faq-question {
-  font-weight: 500;
-  cursor: pointer;
-  position: relative;
-  padding-right: 20px;
-}
-.faq-question::after {
-  content: '+';
-  position: absolute;
-  right: 0;
-}
-.faq-question.active::after {
-  content: '–';
-}
-.faq-answer {
-  display: none;
-  padding: 10px 0 0;
-  color: #8017ce;
-  line-height: 1.5;
-}
-  </style>
-</head>
-<body>
-  <header>
-    <div class="container">
-      <nav>
-        <a href="#about">О проекте</a>
-        <a href="#target">Для кого</a>
-        <a href="#how">Как работает</a>
-        <a href="#features">Что умеет</a>
-        <a href="#advantages">Преимущества</a>
-        <a href="#future">Скоро</a>
-        <a href="#faq">FAQ</a>
-      </nav>
-      <h1>Flexberry Elaro</h1>
-      <p>
-        Ваш AI-ассистент в Telegram, который экономит часы на переписке и помогает сосредоточиться на важном<br>
-        Без лишней рутины. С контролем. От вашего имени.
-      </p>
-      <div class="cta-buttons">
-        <button
-          id="buyBtn"
-          class="btn"
-          data-toggle="modal"
-          data-target="#send-modal"
-        >Купить</button>
-        <button
-          id="demoBtn"
-          class="btn"
-          data-toggle="modal"
-          data-target="#send-modal1"
-        >Демо</button>
+<html>
+  <head>
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta charset="utf-8" />
+    <link rel="stylesheet" href="globals.css" />
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <div class="desktop">
+      <div class="div">
+        <div class="overlap">
+            <a href="#" style="display: block; text-decoration: none; color: inherit;">
+          <div class="overlap-group"><div class="text-wrapper">Получить доступ в Telegram</div></div>
+        </a>
+          <div class="text-wrapper-2">Готовы делегировать рутину?</div>
+          <p class="flexberry-elaro">
+            <span class="span">Попробуйте Flexberry Elaro — </span> <span class="text-wrapper-3">7 дней бесплатно</span>
+          </p>
+          <p class="element-flexberry">
+            <span class="text-wrapper-4">© 2025 Flexberry • </span>
+            <a href="https://elaro.flexberry.net/#" target="_blank" rel="noopener noreferrer"
+              ><span class="text-wrapper-5">Поддержка</span></a
+            >
+            <span class="text-wrapper-4"> • </span>
+            <a href="https://elaro.flexberry.net/#" target="_blank" rel="noopener noreferrer"
+              ><span class="text-wrapper-5">Политика конфиденциальности</span></a
+            >
+          </p>
+        </div>
+        <div class="overlap-2">
+          <div class="overlap-group-2">
+            <div class="rectangle"></div>
+            <img class="lightning" src="img/lightning.svg" />
+            <img class="img" src="img/image.svg" />
+            <div class="ellipse"></div>
+            <div class="text-wrapper-6">2</div>
+            <div class="text-wrapper-7">3</div>
+            <div class="text-wrapper-8">1</div>
+            <img class="chatgpt-image" src="img/chatgpt-image-16-2025-22-19-19-photoroom-1.png" />
+            <div class="rectangle-2"></div>
+            <div class="rectangle-3"></div>
+            <div class="rectangle-4"></div>
+            <div class="rectangle-5"></div>
+            <div class="rectangle-6"></div>
+            <div class="rectangle-7"></div>
+            <p class="p">
+              который экономит часы на <br />переписке и помогает сосредоточиться на важном<br />Без лишней рутины. С
+              контролем. От вашего имени.
+            </p>
+            <div class="text-wrapper-9">Ваш AI-ассистент в Telegram</div>
+            <img class="telegram" src="img/telegram.svg" />
+            <div class="text-wrapper-10">Что такое Flexberry Elaro?</div>
+            <div class="text-wrapper-11">Для кого Flexberry Elaro?</div>
+            <div class="text-wrapper-12">Как работает Flexberry Elaro?</div>
+            <div class="text-wrapper-13">Что умеет Elaro?</div>
+            <div class="text-wrapper-14">Преимущества использования</div>
+            <div class="rectangle-8"></div>
+            <div class="rectangle-9"></div>
+            <div class="rectangle-10"></div>
+            <div class="rectangle-11"></div>
+            <div class="rectangle-12"></div>
+            <img class="student" src="img/student.svg" />
+            <img class="teacher" src="img/teacher.svg" />
+            <a href="" class="text-wrapper-15">О ПРОЕКТЕ</a>
+            <a href="" class="text-wrapper-16">ДЛЯ КОГО</a>
+            <a href="" class="text-wrapper-17">КАК РАБОТАЕТ</a>
+            <a href="" class="text-wrapper-18">ЧТО УМЕЕТ</a>
+            <a href="" class="text-wrapper-19">ПРЕИМУЩЕСТВА</a>
+            <a href="" class="text-wrapper-20">СКОРО</a>
+            <a href="" class="text-wrapper-21">FAQ</a>
+            <div class="text-wrapper-22">Онлайн-школам и образовательным проектам</div>
+            <p class="text-wrapper-23">где важно быстро и качественно <br />отвечать учащимся</p>
+            <div class="text-wrapper-24">и повторяющимися вопросами</div>
+            <p class="text-wrapper-25">которые заботятся о клиентском опыте</p>
+            <p class="text-wrapper-26">Репетиторам и преподавателям с <br />десятками учеников</p>
+            <div class="text-wrapper-27">Командам поддержки</div>
+            <div class="ellipse-2"></div>
+            <div class="ellipse-3"></div>
+            <div class="ellipse-4"></div>
+            <div class="ellipse-5"></div>
+            <div class="text-wrapper-28">1</div>
+            <div class="text-wrapper-29">2</div>
+            <div class="text-wrapper-30">3</div>
+            <div class="text-wrapper-31">4</div>
+            <div class="rectangle-13"></div>
+            <div class="rectangle-14"></div>
+            <div class="rectangle-15"></div>
+            <div class="rectangle-16"></div>
+            <div class="rectangle-17"></div>
+            <div class="rectangle-18"></div>
+            <div class="rectangle-19"></div>
+            <div class="rectangle-20"></div>
+            <div class="rectangle-21"></div>
+            <p class="flexberry-elaro-2">
+              <span class="text-wrapper-32">Flexberry Elaro</span>
+              <span class="text-wrapper-33"
+                > — это инновационный ИИ-ассистент, разработанный специально для преподавателей, самозанятых
+                <br />специалистов и владельцев образовательных курсов. Он предлагает решение на базе современных
+                технологий <br />искусственного интеллекта, которое работает непосредственно в привычных инструментах
+                пользователя.</span
+              >
+            </p>
+            <p class="text-wrapper-34">Ассистент работает с помощью двух Telegram-ботов:</p>
+            <div class="text-wrapper-35">Бот для учеников/клиентов-</div>
+            <p class="text-wrapper-36">
+              Бот для вас — вы видите черновики <br />ответов, подтверждаете или редактируете;
+            </p>
+            <div class="text-wrapper-37">они пишут свои вопросы;</div>
+            <p class="text-wrapper-38">Все ответы перед отправкой проверяются, утверждаются и рецензируются вами.</p>
+            <p class="text-wrapper-39">Ученики задают вопросы через Telegram-бота;</p>
+            <p class="text-wrapper-40">ИИ ищет ответ в базе знаний;</p>
+            <p class="text-wrapper-41">Вы видите вопрос и черновик ответа — подтверждаете или редактируете;</p>
+            <div class="text-wrapper-42">Ответ уходит ученику.</div>
+            <div class="text-wrapper-43">Классифицирует <br />входящие сообщения</div>
+            <div class="text-wrapper-44">Генерирует <br />черновики ответов</div>
+            <div class="text-wrapper-45">Отвечает на <br />типовые вопросы</div>
+            <p class="text-wrapper-46">Использует базу <br />знаний для <br />интеллектуальных <br />ответов</p>
+            <div class="text-wrapper-47">💬 Управление общением</div>
+            <p class="text-wrapper-48">
+              Ответы не отправляются автоматически — вы всегда <br />подтверждаете или редактируете сообщение
+            </p>
+            <div class="text-wrapper-49">🧠 Умные шаблоны</div>
+            <p class="text-wrapper-50">
+              ИИ формирует черновики ответов на основе вашей <br />базы знаний и часто задаваемых вопросов
+            </p>
+            <div class="text-wrapper-51">⚙️ Простота запуска</div>
+            <p class="telegram-2">Работает в Telegram — без интеграций, настроек и <br />технических сложностей</p>
+            <p class="text-wrapper-52">🔐 Ответы только по вашей базе знаний</p>
+            <p class="text-wrapper-53">
+              Ассистент использует только ту информацию, <br />которую вы загрузили и одобрили
+            </p>
+            <p class="elaro-elaro-elaro">
+              Скоро в Elaro!&nbsp;&nbsp; Скоро в Elaro!&nbsp;&nbsp; Скоро в Elaro!&nbsp;&nbsp; Скоро в
+              Elaro!&nbsp;&nbsp; Скоро в Elaro!&nbsp;&nbsp; Скоро в Elaro!&nbsp;&nbsp; Скоро в Elaro!&nbsp;&nbsp; Скоро
+              в Elaro!
+            </p>
+          </div>
+          <div class="overlap-3">
+            <div class="text-wrapper-54">Elaro</div>
+            <div class="text-wrapper-55">Flexberry</div>
+          </div>
+          <a href="#" style="display: block; text-decoration: none; color: inherit;">
+            <div class="div-wrapper" href = "#"><div class="text-wrapper-56">Купить</div></div>
+        </a>
+        <a href="#" style="display: block; text-decoration: none; color: inherit;">
+          <div class="overlap-4"><div class="text-wrapper-57">Демо</div></div>
+        </a>
+          <img class="group" src="img/group.png" />
+        </div>
+        <div class="overlap-5">
+          <div class="ellipse-6"></div>
+          <div class="rectangle-22"></div>
+          <p class="text-wrapper-58">🧾 Автоматические <br />отчёты по урокам</p>
+        </div>
+        <div class="overlap-6">
+          <div class="ellipse-6"></div>
+          <div class="rectangle-22"></div>
+          <p class="text-wrapper-59">💸 Интеграция с <br />платёжными системами</p>
+        </div>
+        <div class="overlap-7">
+          <div class="ellipse-6"></div>
+          <div class="rectangle-22"></div>
+          <div class="text-wrapper-60">📈 Аналитика <br />сэкономленного <br />времени</div>
+        </div>
+        <div class="overlap-8">
+          <div class="ellipse-6"></div>
+          <div class="rectangle-22"></div>
+          <div class="text-wrapper-61">🎤 Расшифровка <br />голосовых сообщений</div>
+        </div>
+        <div class="text-wrapper-62">Часто задаваемые вопросы (FAQ)</div>
+        <div class="overlap-9">
+          <div class="rectangle-23"></div>
+          <p class="elaro-elaro-elaro-2">
+            Скоро в Elaro!&nbsp;&nbsp; Скоро в Elaro!&nbsp;&nbsp; Скоро в Elaro!&nbsp;&nbsp; Скоро в Elaro!&nbsp;&nbsp;
+            Скоро в Elaro!&nbsp;&nbsp; Скоро в Elaro!&nbsp;&nbsp; Скоро в Elaro!&nbsp;&nbsp; Скоро в Elaro!
+          </p>
+        </div>
+        <img class="line" src="img/line-1.svg" />
+        <img class="line-2" src="img/line-2.svg" />
+        <img class="line-3" src="img/line-3.svg" />
+        <img class="line-4" src="img/line-4.svg" />
+        <img class="line-5" src="img/line-5.svg" />
+        <div class="text-wrapper-63">+</div>
+        <div class="text-wrapper-64">+</div>
+        <div class="text-wrapper-65">+</div>
+        <div class="text-wrapper-66">+</div>
+        <div class="text-wrapper-67">+</div>
+        <p class="text-wrapper-68">Сколько времени нужно, чтобы запустить Elaro?</p>
+        <div class="text-wrapper-69">Я смогу редактировать ответы?</div>
+        <div class="text-wrapper-70">Бот отвечает вместо меня?</div>
+        <div class="text-wrapper-71">Как загружается база знаний?</div>
+        <p class="text-wrapper-72">Если я один преподаватель — мне это подходит?</p>
       </div>
     </div>
-  </header>
-
-<!-- Модалка «Купить» -->
-<div
-  class="modal fade"
-  id="send-modal"
-  tabindex="-1"
-  role="dialog"
-  aria-hidden="true"
->
-  <div class="modal-dialog modal-lg">
-    <div class="modal-content">
-      <div class="modal-header">
-        <h2 class="modal-title">Заявка на покупку</h2>
-        <button
-          type="button"
-          class="close"
-          data-dismiss="modal"
-          aria-label="Close"
-        >
-          <span aria-hidden="true">&times;</span>
-        </button>
-      </div>
-      <div class="modal-body">
-        <div class="container">
-          <script src="https://forms.yandex.ru/_static/embed.js"></script>
-          <iframe
-            src="https://forms.yandex.ru/u/6463754fd0468800eda88737/?iframe=1"
-            frameborder="0"
-            name="ya-form-6463754fd0468800eda88737"
-            width="100%"
-          ></iframe>
-        </div>
-      </div>
-    </div>
-  </div>
-</div>
-
-<!-- Модалка «Демо» -->
-<div
-  class="modal fade"
-  id="send-modal1"
-  tabindex="-1"
-  role="dialog"
-  aria-hidden="true"
->
-  <div class="modal-dialog modal-lg">
-    <div class="modal-content">
-      <div class="modal-header">
-        <h2 class="modal-title">Запрос на демонстрацию</h2>
-        <button
-          type="button"
-          class="close"
-          data-dismiss="modal"
-          aria-label="Close"
-        >
-          <span aria-hidden="true">&times;</span>
-        </button>
-      </div>
-      <div class="modal-body">
-        <div class="container">
-          <script src="https://forms.yandex.ru/_static/embed.js"></script>
-          <iframe
-            src="https://forms.yandex.ru/u/674840e102848f47dc1de004/?iframe=1"
-            frameborder="0"
-            name="ya-form-674840e102848f47dc1de004"
-            width="100%"
-          ></iframe>
-        </div>
-      </div>
-    </div>
-  </div>
-</div>
-
-
-  <main>
-    <!-- Новый раздел: Что такое Flexberry Elaro -->
-    <section id="about">
-      <h2>Что такое Flexberry Elaro?</h2>
-  <p>
-    <strong>Flexberry Elaro</strong> — это инновационный ИИ-ассистент, разработанный специально для преподавателей, самозанятых специалистов и владельцев образовательных курсов.
-    Он предлагает решение на базе современных технологий искусственного интеллекта, которое работает непосредственно в привычных инструментах пользователя.
-  </p>
-  <p>Ассистент работает с помощью двух Telegram-ботов:</p>
-  <ul>
-    <li><strong>Бот для учеников/клиентов</strong> — они пишут свои вопросы;</li>
-    <li><strong>Бот для вас</strong> — вы видите черновики ответов, подтверждаете или редактируете;</li>
-  </ul>
-  <p>Все ответы перед отправкой проверяются, утверждаются и рецензируются вами.</p>
-    </section>
-
-    <!-- Обновлённый раздел: Для кого Elaro -->
-    <section id="target">
-      <h2>Для кого Flexberry Elaro</h2>
-  <ul class="target-list">
-    <li>
-      <span class="icon">🏫</span>
-      <p><strong>Онлайн-школам и образовательным проектам</strong> — где важно быстро и качественно отвечать учащимся</p>
-    </li>
-    <li>
-      <span class="icon">👩‍🏫</span>
-      <p><strong>Репетиторам и преподавателям с десятками учеников</strong> — и повторяющимися вопросами</p>
-    </li>
-    <li>
-      <span class="icon">💬</span>
-      <p><strong>Командам поддержки</strong> — которые заботятся о клиентском опыте</p>
-    </li>
-  </ul>
-</section>
-    </section>
-
-    <!-- Обновлённый раздел: Как работает Flexberry Elaro -->
-    <section id="how">
-      <h2>Как работает Flexberry Elaro</h2>
-      <div class="steps">
-        <div class="step"> Ученики задают вопросы через Telegram-бота;</div>
-        <div class="step"> ИИ ищет ответ в базе знаний;</div>
-        <div class="step"> Вы видите вопрос и черновик ответа — подтверждаете или редактируете;</div>
-        <div class="step"> Ответ уходит ученику.</div>
-      </div>
-    </section>    
-
-    <!-- Обновлённый раздел: Что умеет Elaro -->
-    <section id="features">
-      <h2>Что умеет Elaro</h2>
-      <div class="grid">
-        <div class="card">Классифицирует входящие сообщения</div>
-        <div class="card">Генерирует черновики ответов</div>
-        <div class="card">Отвечает на типовые вопросы</div>
-        <div class="card">Использует базу знаний для интеллектуальных ответов</div>
-      </div>
-    </section>
-
-    <!-- Обновлённый раздел: Преимущества использования -->
-    <section id="advantages">
-      <h2>Преимущества использования</h2>
-      <div class="benefits">
-        <div class="benefit">
-          <div class="benefit-title">💬 <strong>Управление общением</strong></div>
-          <p>Ответы не отправляются автоматически — вы всегда подтверждаете или редактируете сообщение</p>
-        </div>
-        <div class="benefit">
-          <div class="benefit-title">🧠 <strong>Умные шаблоны</strong></div>
-          <p>ИИ формирует черновики ответов на основе вашей базы знаний и часто задаваемых вопросов</p>
-        </div>
-        <div class="benefit">
-          <div class="benefit-title">⚙️ <strong>Простота запуска</strong></div>
-          <p>Работает в Telegram — без интеграций, настроек и технических сложностей</p>
-        </div>
-        <div class="benefit">
-          <div class="benefit-title">🔐 <strong>Ответы только по вашей базе знаний</strong></div>
-          <p>Ассистент использует только ту информацию, которую вы загрузили и одобрили</p>
-        </div>
-      </div>
-    </section>
-
-    <!-- Секция «Скоро в Elarо» оставляем без изменений -->
-    <section id="future">
-      <h2>Скоро в Elaro</h2>
-      <div class="grid">
-        <div class="card">🧾 Автоматические отчёты по урокам</div>
-        <div class="card">💸 Интеграция с платёжными системами</div>
-        <div class="card">📈 Аналитика сэкономленного времени</div>
-        <div class="card">🎤 Расшифровка голосовых сообщений</div>
-      </div>
-    </section>
-
-    <section id="faq">
-      <h2>Часто задаваемые вопросы (FAQ)</h2>
-    
-      <div class="faq-item">
-        <div class="faq-question">Сколько времени нужно, чтобы запустить Elaro?</div>
-        <div class="faq-answer">
-          До 15 минут: загружаете базу знаний, настраиваете запрос (промпт), получаете Telegram-ссылки.
-        </div>
-      </div>
-    
-      <div class="faq-item">
-        <div class="faq-question">Я смогу редактировать ответы?</div>
-        <div class="faq-answer">
-          Да. Каждый ответ приходит как черновик — вы можете его поправить или подтвердить.
-        </div>
-      </div>
-    
-      <div class="faq-item">
-        <div class="faq-question">Бот отвечает вместо меня?</div>
-        <div class="faq-answer">
-          Нет. Это помощник — он не отправляет ничего без вашего одобрения.
-        </div>
-      </div>
-    
-      <div class="faq-item">
-        <div class="faq-question">Как загружается база знаний?</div>
-        <div class="faq-answer">
-          Через простой веб-интерфейс — текст, списки, инструкции и часто задаваемые вопросы.
-        </div>
-      </div>
-    
-      <div class="faq-item">
-        <div class="faq-question">Если я один преподаватель — мне это подходит?</div>
-        <div class="faq-answer">
-          Да! Даже при 5–10 учениках Elaro заметно экономит время.
-        </div>
-      </div>
-    </section>
-  </main>
-
-  <!-- CTA-блок остаётся без изменений -->
-  <section class="cta-final">
-    <h2>Готовы делегировать рутину?</h2>
-    <p>Попробуйте Flexberry Elaro — 7 дней бесплатно</p>
-    <button
-     class="btn"
-     data-toggle="modal"
-     data-target="#send-modal1"
-   >🚀 Получить доступ в Telegram</button>
-  </section>
-
-  <footer>
-    <p>© 2025 Flexberry • <a href="#">Поддержка</a> • <a href="#">Политика конфиденциальности</a></p>
-  </footer>
-
-  <script>
-    document.querySelectorAll('.faq-question').forEach(function(el) {
-      el.addEventListener('click', function() {
-        this.classList.toggle('active');
-        var ans = this.nextElementSibling;
-        ans.style.display = ans.style.display === 'block' ? 'none' : 'block';
-      });
-    });
-  </script>
-  
-  <!-- Подключение Bootstrap JS и зависимостей -->
-<script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
-<script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js"></script>
-<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
-</body>
+  </body>
 </html>
