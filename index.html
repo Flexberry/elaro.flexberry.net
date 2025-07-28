@@ -1,12 +1,15 @@
 <!DOCTYPE html>
 <html lang="ru">
+
 <head>
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <meta charset="utf-8" />
+  <link rel="stylesheet" href="assets/css/bootstrap.min.css" />
   <link rel="stylesheet" href="globals.css" />
   <link rel="stylesheet" href="style.css" />
   <title>Flexberry Elaro</title>
 </head>
+
 <body>
   <div class="page-container">
     <!-- Шапка сайта -->
@@ -28,13 +31,12 @@
         <a href="#faq" class="nav-link">FAQ</a>
       </nav>
       <div class="header-buttons">
-        <a href="#" class="btn btn-primary">Купить</a>
-        <a href="#" class="btn btn-secondary">Демо</a>
+        <a href="#" data-toggle="modal" data-target="#send-modal" class="btn btn-primary">Купить</a>
+        <a href="#" data-toggle="modal" data-target="#send-modal1" class="btn btn-secondary">Демо</a>
       </div>
     </header>
-
     <!-- Главный баннер -->
-    <section class="hero">
+    <section class="hero container">
       <div class="hero-content">
         <h1 class="hero-title">Ваш AI-ассистент в Telegram</h1>
         <p class="hero-description">
@@ -54,26 +56,27 @@
       <h2 class="section-title">Что такое Flexberry Elaro?</h2>
       <div class="about-content">
         <p class="about-text">
-          <span class="bold">Flexberry Elaro</span> — это инновационный ИИ-ассистент, разработанный специально для преподавателей, самозанятых
+          <span class="bold">Flexberry Elaro</span> — это инновационный ИИ-ассистент, разработанный специально для
+          преподавателей, самозанятых
           специалистов и владельцев образовательных курсов. Он предлагает решение на базе современных технологий
           искусственного интеллекта, которое работает непосредственно в привычных инструментах пользователя.
         </p>
         <p class="about-subtitle">Ассистент работает с помощью двух Telegram-ботов:</p>
-        
+
         <div class="bots-info">
           <div class="bot-card student-bot">
             <img src="img/student.svg" alt="Ученик" class="bot-icon" />
             <h3 class="bot-title">Бот для учеников/клиентов</h3>
             <p class="bot-description">они пишут свои вопросы;</p>
           </div>
-          
+
           <div class="bot-card teacher-bot">
             <img src="img/teacher.svg" alt="Учитель" class="bot-icon" />
             <h3 class="bot-title">Бот для вас</h3>
             <p class="bot-description">вы видите черновики ответов, подтверждаете или редактируете;</p>
           </div>
         </div>
-        
+
         <p class="about-note">Все ответы перед отправкой проверяются, утверждаются и рецензируются вами.</p>
       </div>
     </section>
@@ -81,18 +84,18 @@
     <!-- Для кого -->
     <section id="for-whom" class="section for-whom">
       <h2 class="section-title">Для кого Flexberry Elaro?</h2>
-      
+
       <div class="audience-cards">
         <div class="audience-card">
           <h3 class="audience-title">Онлайн-школам и образовательным проектам</h3>
           <p class="audience-description">где важно быстро и качественно отвечать учащимся</p>
         </div>
-        
+
         <div class="audience-card">
           <h3 class="audience-title">Репетиторам и преподавателям с десятками учеников</h3>
           <p class="audience-description">и повторяющимися вопросами</p>
         </div>
-        
+
         <div class="audience-card">
           <h3 class="audience-title">Командам поддержки</h3>
           <p class="audience-description">которые заботятся о клиентском опыте</p>
@@ -103,23 +106,23 @@
     <!-- Как работает -->
     <section id="how-works" class="section how-works">
       <h2 class="section-title">Как работает Flexberry Elaro?</h2>
-      
+
       <div class="steps">
         <div class="step">
           <div class="step-number">1</div>
           <p class="step-description">Ученики задают вопросы через Telegram-бота;</p>
         </div>
-        
+
         <div class="step">
           <div class="step-number">2</div>
           <p class="step-description">ИИ ищет ответ в базе знаний;</p>
         </div>
-        
+
         <div class="step">
           <div class="step-number">3</div>
           <p class="step-description">Вы видите вопрос и черновик ответа — подтверждаете или редактируете;</p>
         </div>
-        
+
         <div class="step">
           <div class="step-number">4</div>
           <p class="step-description">Ответ уходит ученику.</p>
@@ -130,20 +133,20 @@
     <!-- Что умеет -->
     <section id="features" class="section features">
       <h2 class="section-title">Что умеет Elaro?</h2>
-      
+
       <div class="feature-cards">
         <div class="feature-card">
           <h3 class="feature-title">Классифицирует входящие сообщения</h3>
         </div>
-        
+
         <div class="feature-card">
           <h3 class="feature-title">Генерирует черновики ответов</h3>
         </div>
-        
+
         <div class="feature-card">
           <h3 class="feature-title">Отвечает на типовые вопросы</h3>
         </div>
-        
+
         <div class="feature-card">
           <h3 class="feature-title">Использует базу знаний для интеллектуальных ответов</h3>
         </div>
@@ -153,7 +156,7 @@
     <!-- Преимущества -->
     <section id="benefits" class="section benefits">
       <h2 class="section-title">Преимущества использования</h2>
-      
+
       <div class="benefits-grid">
         <div class="benefit-card">
           <h3 class="benefit-title">💬 Управление общением</h3>
@@ -161,21 +164,21 @@
             Ответы не отправляются автоматически — вы всегда подтверждаете или редактируете сообщение
           </p>
         </div>
-        
+
         <div class="benefit-card">
           <h3 class="benefit-title">🧠 Умные шаблоны</h3>
           <p class="benefit-description">
             ИИ формирует черновики ответов на основе вашей базы знаний и часто задаваемых вопросов
           </p>
         </div>
-        
+
         <div class="benefit-card">
           <h3 class="benefit-title">⚙️ Простота запуска</h3>
           <p class="benefit-description">
             Работает в Telegram — без интеграций, настроек и технических сложностей
           </p>
         </div>
-        
+
         <div class="benefit-card">
           <h3 class="benefit-title">🔐 Ответы только по вашей базе знаний</h3>
           <p class="benefit-description">
@@ -188,22 +191,23 @@
     <!-- Скоро -->
     <section id="coming-soon" class="section coming-soon">
       <div class="coming-soon-banner">
-        <p class="banner-text">Скоро в Elaro!&nbsp;&nbsp; Скоро в Elaro!&nbsp;&nbsp; Скоро в Elaro!&nbsp;&nbsp; Скоро в Elaro!</p>
+        <p class="banner-text">Скоро в Elaro!&nbsp;&nbsp; Скоро в Elaro!&nbsp;&nbsp; Скоро в Elaro!&nbsp;&nbsp; Скоро в
+          Elaro!</p>
       </div>
-      
+
       <div class="coming-soon-features">
         <div class="coming-feature">
           <h3 class="coming-feature-title">🧾 Автоматические отчёты по урокам</h3>
         </div>
-        
+
         <div class="coming-feature">
           <h3 class="coming-feature-title">💸 Интеграция с платёжными системами</h3>
         </div>
-        
+
         <div class="coming-feature">
           <h3 class="coming-feature-title">📈 Аналитика сэкономленного времени</h3>
         </div>
-        
+
         <div class="coming-feature">
           <h3 class="coming-feature-title">🎤 Расшифровка голосовых сообщений</h3>
         </div>
@@ -213,7 +217,7 @@
     <!-- FAQ -->
     <section id="faq" class="section faq">
       <h2 class="section-title">Часто задаваемые вопросы (FAQ)</h2>
-      
+
       <div class="faq-list">
         <details class="faq-item">
           <summary class="faq-question">
@@ -224,7 +228,7 @@
             <!-- Ответ будет добавлен здесь -->
           </div>
         </details>
-        
+
         <details class="faq-item">
           <summary class="faq-question">
             <span>Я смогу редактировать ответы?</span>
@@ -234,7 +238,7 @@
             <!-- Ответ будет добавлен здесь -->
           </div>
         </details>
-        
+
         <details class="faq-item">
           <summary class="faq-question">
             <span>Бот отвечает вместо меня?</span>
@@ -244,7 +248,7 @@
             <!-- Ответ будет добавлен здесь -->
           </div>
         </details>
-        
+
         <details class="faq-item">
           <summary class="faq-question">
             <span>Как загружается база знаний?</span>
@@ -254,7 +258,7 @@
             <!-- Ответ будет добавлен здесь -->
           </div>
         </details>
-        
+
         <details class="faq-item">
           <summary class="faq-question">
             <span>Если я один преподаватель — мне это подходит?</span>
@@ -266,7 +270,44 @@
         </details>
       </div>
     </section>
-
+    <div class="modal fade" id="send-modal" tabindex="-1" role="dialog" aria-hidden="true">
+      <div class="modal-dialog modal-lg" style="height: 95vh;">
+        <div class="modal-content" style="height: 100%;">
+          <div class="modal-header">
+            <h2 class="modal-title">Заявка на покупку</h2>
+            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+              <span aria-hidden="true">&times;</span>
+            </button>
+          </div>
+          <div class="modal-body" style="height: calc(100% - 60px); padding: 0;">
+            <div class="container-fluid h-100" style="padding: 0;">
+              <script src="https://forms.yandex.ru/_static/embed.js"></script><iframe
+                src="https://forms.yandex.ru/u/688365a2068ff00757cbb061?iframe=1" frameborder="0"
+                name="ya-form-688365a2068ff00757cbb061" width="650"></iframe>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="modal fade" id="send-modal1" tabindex="-1" role="dialog" aria-hidden="true">
+      <div class="modal-dialog modal-lg">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h2 class="modal-title">Запрос на демонстрацию</h2>
+            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+              <span aria-hidden="true">&times;</span>
+            </button>
+          </div>
+          <div class="modal-body">
+            <div class="container">
+              <script src="https://forms.yandex.ru/_static/embed.js"></script><iframe
+                src="https://forms.yandex.ru/u/688364f3f47e73078cb64527?iframe=1" frameborder="0"
+                name="ya-form-688364f3f47e73078cb64527" width="650"></iframe>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
     <!-- Футер -->
     <footer class="footer">
       <div class="footer-content">
@@ -280,6 +321,9 @@
         <p>© 2025 Flexberry • <a href="#">Поддержка</a> • <a href="#">Политика конфиденциальности</a></p>
       </div>
     </footer>
+    <script src="assets/js/jquery.min.js"></script>
+    <script src="assets/js/bootstrap.bundle.min.js"></script>
   </div>
 </body>
+
 </html>
