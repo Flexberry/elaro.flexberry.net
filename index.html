@@ -7,7 +7,16 @@
   <link rel="stylesheet" href="assets/css/bootstrap.min.css" />
   <link rel="stylesheet" href="globals.css" />
   <link rel="stylesheet" href="style.css" />
-  <title>Flexberry Elaro</title>
+  <!-- Google tag (gtag.js) -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-QLW31VYWMQ"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+
+    gtag('config', 'G-QLW31VYWMQ');
+  </script>
+  <title>Flexberry Elaro — ИИ-ассистент для мероприятий</title>
 </head>
 
 <body>
@@ -22,62 +31,65 @@
         </div>
       </div>
       <nav class="main-nav">
-        <a href="#about" class="nav-link">О ПРОЕКТЕ</a>
+        <a href="#about" class="nav-link">О ПРОДУКТЕ</a>
         <a href="#for-whom" class="nav-link">ДЛЯ КОГО</a>
         <a href="#how-works" class="nav-link">КАК РАБОТАЕТ</a>
-        <a href="#features" class="nav-link">ЧТО УМЕЕТ</a>
+        <a href="#features" class="nav-link">ВОЗМОЖНОСТИ</a>
         <a href="#benefits" class="nav-link">ПРЕИМУЩЕСТВА</a>
-        <a href="#coming-soon" class="nav-link">СКОРО</a>
         <a href="#faq" class="nav-link">FAQ</a>
       </nav>
       <div class="header-buttons">
-        <a href="#" data-toggle="modal" data-target="#send-modal" class="btn btn-primary">Купить</a>
-        <a href="#" data-toggle="modal" data-target="#send-modal1" class="btn btn-secondary">Демо</a>
+        <a href="#" data-toggle="modal" data-target="#send-modal" class="btn btn-primary">Запросить пилот</a>
+        <a href="#" data-toggle="modal" data-target="#send-modal1" class="btn btn-secondary">Связаться</a>
       </div>
     </header>
+
     <!-- Главный баннер -->
     <section class="hero container">
       <div class="hero-content">
-        <h1 class="hero-title">Ваш AI-ассистент в Telegram</h1>
+        <h1 class="hero-title">ИИ-ассистент для мероприятий</h1>
         <p class="hero-description">
-          который экономит часы на переписке и помогает сосредоточиться на важном<br />
-          Без лишней рутины. С контролем. От вашего имени.
+          Отвечает гостям в реальном времени через Max, VK и Telegram.<br />
+          Снижает нагрузку на персонал и экономит бюджет организатора.
         </p>
         <img class="telegram-icon" src="img/telegram.svg" alt="Telegram" />
       </div>
       <div class="hero-image">
-        <img src="img/chatgpt-image-16-2025-22-19-19-photoroom-1.png" alt="AI ассистент" />
+        <img src="img/chatgpt-image-16-2025-22-19-19-photoroom-1.png" alt="ИИ-ассистент для мероприятий" />
         <div class="hero-bg-circle"></div>
       </div>
     </section>
 
-    <!-- О проекте -->
+    <!-- О продукте -->
     <section id="about" class="section about">
       <h2 class="section-title">Что такое Flexberry Elaro?</h2>
       <div class="about-content">
         <p class="about-text">
-          <span class="bold">Flexberry Elaro</span> — это инновационный ИИ-ассистент, разработанный специально для
-          преподавателей, самозанятых
-          специалистов и владельцев образовательных курсов. Он предлагает решение на базе современных технологий
-          искусственного интеллекта, которое работает непосредственно в привычных инструментах пользователя.
+          <span class="bold">Flexberry Elaro</span> — это интеллектуальный чат-бот на базе LLM,
+          который отвечает гостям мероприятий в реальном времени через популярные мессенджеры.
+          Организатор загружает расписание, карту и FAQ — бот автоматически строит сценарии диалогов
+          и начинает помогать гостям.
         </p>
-        <p class="about-subtitle">Ассистент работает с помощью двух Telegram-ботов:</p>
+        <p class="about-subtitle">Как это работает для гостя:</p>
 
         <div class="bots-info">
-          <div class="bot-card student-bot">
-            <img src="img/student.svg" alt="Ученик" class="bot-icon" />
-            <h3 class="bot-title">Бот для учеников/клиентов</h3>
-            <p class="bot-description">они пишут свои вопросы;</p>
+          <div class="bot-card">
+            <h3 class="bot-title">До мероприятия</h3>
+            <p class="bot-description">Гость переходит в бота по QR-коду на билете, сайте или программе</p>
           </div>
 
-          <div class="bot-card teacher-bot">
-            <img src="img/teacher.svg" alt="Учитель" class="bot-icon" />
-            <h3 class="bot-title">Бот для вас</h3>
-            <p class="bot-description">вы видите черновики ответов, подтверждаете или редактируете;</p>
+          <div class="bot-card">
+            <h3 class="bot-title">Во время</h3>
+            <p class="bot-description">Задаёт вопрос — бот отвечает по сценарию или передаёт живому оператору</p>
+          </div>
+
+          <div class="bot-card">
+            <h3 class="bot-title">После</h3>
+            <p class="bot-description">Организатор получает аналитику: популярные темы, качество ответов, нагрузка</p>
           </div>
         </div>
 
-        <p class="about-note">Все ответы перед отправкой проверяются, утверждаются и рецензируются вами.</p>
+        <p class="about-note">Бот сам понимает, когда вопрос слишком сложный, и мгновенно подключает оператора.</p>
       </div>
     </section>
 
@@ -87,18 +99,18 @@
 
       <div class="audience-cards">
         <div class="audience-card">
-          <h3 class="audience-title">Онлайн-школам и образовательным проектам</h3>
-          <p class="audience-description">где важно быстро и качественно отвечать учащимся</p>
+          <h3 class="audience-title">Музыкальные фестивали</h3>
+          <p class="audience-description">5 000 — 100 000+ гостей. Справиться с хаосом навигации и снизить нагрузку на волонтёров</p>
         </div>
 
         <div class="audience-card">
-          <h3 class="audience-title">Репетиторам и преподавателям с десятками учеников</h3>
-          <p class="audience-description">и повторяющимися вопросами</p>
+          <h3 class="audience-title">IT-конференции</h3>
+          <p class="audience-description">1 000 — 15 000 участников. Автоматические ответы о расписании, спикерах и локациях</p>
         </div>
 
         <div class="audience-card">
-          <h3 class="audience-title">Командам поддержки</h3>
-          <p class="audience-description">которые заботятся о клиентском опыте</p>
+          <h3 class="audience-title">Выставки и городские праздники</h3>
+          <p class="audience-description">3 000 — 500 000+ гостей. Навигация по сложной инфраструктуре и ответы на типовые вопросы</p>
         </div>
       </div>
     </section>
@@ -110,171 +122,158 @@
       <div class="steps">
         <div class="step">
           <div class="step-number">1</div>
-          <p class="step-description">Ученики задают вопросы через Telegram-бота;</p>
+          <p class="step-description">Организатор загружает расписание, карту и FAQ</p>
         </div>
 
         <div class="step">
           <div class="step-number">2</div>
-          <p class="step-description">ИИ ищет ответ в базе знаний;</p>
+          <p class="step-description">Бот автоматически строит сценарии диалогов</p>
         </div>
 
         <div class="step">
           <div class="step-number">3</div>
-          <p class="step-description">Вы видите вопрос и черновик ответа — подтверждаете или редактируете;</p>
+          <p class="step-description">Гость сканирует QR-код и задаёт вопрос в мессенджере</p>
         </div>
 
         <div class="step">
           <div class="step-number">4</div>
-          <p class="step-description">Ответ уходит ученику.</p>
+          <p class="step-description">Бот отвечает сам или передаёт сложный вопрос оператору</p>
+        </div>
+
+        <div class="step">
+          <div class="step-number">5</div>
+          <p class="step-description">После мероприятия — аналитика и отчёт для организатора</p>
         </div>
       </div>
     </section>
 
-    <!-- Что умеет -->
+    <!-- Возможности -->
     <section id="features" class="section features">
-      <h2 class="section-title">Что умеет Elaro?</h2>
+      <h2 class="section-title">Возможности Elaro</h2>
 
       <div class="feature-cards">
         <div class="feature-card">
-          <h3 class="feature-title">Классифицирует входящие сообщения</h3>
+          <h3 class="feature-title">Гибкие сценарии диалогов</h3>
+          <p class="feature-description">Настраиваемые сценарии ответов и действий без программистов. Корректируйте вручную при необходимости.</p>
         </div>
 
         <div class="feature-card">
-          <h3 class="feature-title">Генерирует черновики ответов</h3>
+          <h3 class="feature-title">Умная эскалация на оператора</h3>
+          <p class="feature-description">Бот сам понимает, когда вопрос слишком сложный, и передаёт диалог живому оператору в том же чате.</p>
         </div>
 
         <div class="feature-card">
-          <h3 class="feature-title">Отвечает на типовые вопросы</h3>
+          <h3 class="feature-title">Развёртывание за 30 минут</h3>
+          <p class="feature-description">SaaS-решение без сложных интеграций. Загрузите данные — и бот готов к работе в Max, VK и Telegram.</p>
         </div>
 
         <div class="feature-card">
-          <h3 class="feature-title">Использует базу знаний для интеллектуальных ответов</h3>
+          <h3 class="feature-title">Аналитика после мероприятия</h3>
+          <p class="feature-description">Отчёт: на какие темы чаще звали оператора, какие сценарии доработать, общая статистика запросов.</p>
         </div>
       </div>
     </section>
 
     <!-- Преимущества -->
     <section id="benefits" class="section benefits">
-      <h2 class="section-title">Преимущества использования</h2>
+      <h2 class="section-title">Преимущества для организатора</h2>
 
       <div class="benefits-grid">
         <div class="benefit-card">
-          <h3 class="benefit-title">💬 Управление общением</h3>
+          <h3 class="benefit-title">10-20x экономия</h3>
           <p class="benefit-description">
-            Ответы не отправляются автоматически — вы всегда подтверждаете или редактируете сообщение
+            Вместо 15-20 волонтёров за 150-300 тыс. руб. — ИИ-бот от 15 тыс. руб. за мероприятие
           </p>
         </div>
 
         <div class="benefit-card">
-          <h3 class="benefit-title">🧠 Умные шаблоны</h3>
+          <h3 class="benefit-title">80-90% автоматизация</h3>
           <p class="benefit-description">
-            ИИ формирует черновики ответов на основе вашей базы знаний и часто задаваемых вопросов
+            Типовые вопросы о расписании, карте, программе — бот обрабатывает без участия человека
           </p>
         </div>
 
         <div class="benefit-card">
-          <h3 class="benefit-title">⚙️ Простота запуска</h3>
+          <h3 class="benefit-title">Контроль качества</h3>
           <p class="benefit-description">
-            Работает в Telegram — без интеграций, настроек и технических сложностей
+            Оператор видит всю историю переписки при эскалации и отвечает без задержек
           </p>
-        </div>
-
-        <div class="benefit-card">
-          <h3 class="benefit-title">🔐 Ответы только по вашей базе знаний</h3>
-          <p class="benefit-description">
-            Ассистент использует только ту информацию, которую вы загрузили и одобрили
-          </p>
-        </div>
-      </div>
-    </section>
-
-    <!-- Скоро -->
-    <section id="coming-soon" class="section coming-soon">
-      <div class="coming-soon-banner">
-        <p class="banner-text">Скоро в Elaro!&nbsp;&nbsp; Скоро в Elaro!&nbsp;&nbsp; Скоро в Elaro!&nbsp;&nbsp; Скоро в
-          Elaro!</p>
-      </div>
-
-      <div class="coming-soon-features">
-        <div class="coming-feature">
-          <h3 class="coming-feature-title">🧾 Автоматические отчёты по урокам</h3>
-        </div>
-
-        <div class="coming-feature">
-          <h3 class="coming-feature-title">💸 Интеграция с платёжными системами</h3>
-        </div>
-
-        <div class="coming-feature">
-          <h3 class="coming-feature-title">📈 Аналитика сэкономленного времени</h3>
-        </div>
-
-        <div class="coming-feature">
-          <h3 class="coming-feature-title">🎤 Расшифровка голосовых сообщений</h3>
         </div>
       </div>
     </section>
 
     <!-- FAQ -->
     <section id="faq" class="section faq">
-      <h2 class="section-title">Часто задаваемые вопросы (FAQ)</h2>
+      <h2 class="section-title">Часто задаваемые вопросы</h2>
 
       <div class="faq-list">
         <details class="faq-item">
           <summary class="faq-question">
-            <span>Сколько времени нужно, чтобы запустить Elaro?</span>
+            <span>Сколько времени нужно для настройки бота?</span>
             <span class="faq-toggle">+</span>
           </summary>
           <div class="faq-answer">
-            <!-- Ответ будет добавлен здесь -->
+            <p>Около 30 минут. Загрузите расписание, карту площадки и список часто задаваемых вопросов — бот автоматически построит сценарии диалогов. При необходимости вы можете скорректировать их вручную.</p>
           </div>
         </details>
 
         <details class="faq-item">
           <summary class="faq-question">
-            <span>Я смогу редактировать ответы?</span>
+            <span>В каких мессенджерах работает бот?</span>
             <span class="faq-toggle">+</span>
           </summary>
           <div class="faq-answer">
-            <!-- Ответ будет добавлен здесь -->
+            <p>Max, VK, Telegram и другие популярные платформы. Гости общаются в привычной среде — никаких дополнительных приложений устанавливать не нужно.</p>
           </div>
         </details>
 
         <details class="faq-item">
           <summary class="faq-question">
-            <span>Бот отвечает вместо меня?</span>
+            <span>Что если бот не может ответить на вопрос?</span>
             <span class="faq-toggle">+</span>
           </summary>
           <div class="faq-answer">
-            <!-- Ответ будет добавлен здесь -->
+            <p>Бот автоматически определяет сложные или нестандартные вопросы (например, потерялся ребёнок) и мгновенно передаёт диалог живому оператору. Оператор видит всю историю переписки и отвечает без задержек.</p>
           </div>
         </details>
 
         <details class="faq-item">
           <summary class="faq-question">
-            <span>Как загружается база знаний?</span>
+            <span>Как гости находят бота?</span>
             <span class="faq-toggle">+</span>
           </summary>
           <div class="faq-answer">
-            <!-- Ответ будет добавлен здесь -->
+            <p>Гость переходит в бота по QR-коду — на билете, сайте или печатной программе мероприятия. Сканирование занимает секунду, после чего открывается чат в мессенджере.</p>
           </div>
         </details>
 
         <details class="faq-item">
           <summary class="faq-question">
-            <span>Если я один преподаватель — мне это подходит?</span>
+            <span>Сколько это стоит?</span>
             <span class="faq-toggle">+</span>
           </summary>
           <div class="faq-answer">
-            <!-- Ответ будет добавлен здесь -->
+            <p>Стоимость зависит от масштаба мероприятия. Ориентировочный диапазон — от 15 до 75 тыс. руб. за ивент. LLM-вычисления оплачиваются только на 2-3 дня мероприятия, что делает решение экономичным.</p>
+          </div>
+        </details>
+
+        <details class="faq-item">
+          <summary class="faq-question">
+            <span>Какую аналитику получает организатор?</span>
+            <span class="faq-toggle">+</span>
+          </summary>
+          <div class="faq-answer">
+            <p>После мероприятия вы получаете отчёт: какие темы вызывали наибольший интерес, как часто требовался оператор, какие сценарии ответов стоит доработать, общее количество обработанных запросов.</p>
           </div>
         </details>
       </div>
     </section>
+
     <div class="modal fade" id="send-modal" tabindex="-1" role="dialog" aria-hidden="true">
       <div class="modal-dialog modal-lg">
         <div class="modal-content">
           <div class="modal-header">
-            <h2 class="modal-title">Заявка на покупку</h2>
+            <h2 class="modal-title">Запросить пилот</h2>
             <button type="button" class="close" data-dismiss="modal" aria-label="Close">
               <span aria-hidden="true">&times;</span>
             </button>
@@ -291,7 +290,7 @@
       <div class="modal-dialog modal-lg">
         <div class="modal-content">
           <div class="modal-header">
-            <h2 class="modal-title">Запрос на демонстрацию</h2>
+            <h2 class="modal-title">Связаться с нами</h2>
             <button type="button" class="close" data-dismiss="modal" aria-label="Close">
               <span aria-hidden="true">&times;</span>
             </button>
@@ -304,17 +303,18 @@
         </div>
       </div>
     </div>
+
     <!-- Футер -->
     <footer class="footer">
       <div class="footer-content">
-        <h2 class="footer-title">Готовы делегировать рутину?</h2>
+        <h2 class="footer-title">Готовы автоматизировать поддержку мероприятия?</h2>
         <p class="footer-subtitle">
-          <span>Попробуйте Flexberry Elaro — </span><span class="bold">7 дней бесплатно</span>
+          <span>Попробуйте Flexberry Elaro — </span><span class="bold">настройка за 30 минут</span>
         </p>
-        <a href="#" class="btn btn-cta">Получить доступ в Telegram</a>
+        <a href="#" class="btn btn-cta" data-toggle="modal" data-target="#send-modal">Запросить пилот</a>
       </div>
       <div class="footer-copyright">
-        <p>© 2025 Flexberry • <a href="#">Поддержка</a> • <a href="#">Политика конфиденциальности</a></p>
+        <p>2026 &copy; <a href="https://neoplatform.ru">ООО "Новая платформа"</a> &bull; <a href="mailto:mail@flexberry.net">mail@flexberry.net</a> &bull; +7 (982) 481-35-39</p>
       </div>
     </footer>
     <script src="assets/js/jquery.min.js"></script>
